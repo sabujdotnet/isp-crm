@@ -1,5 +1,5 @@
 import express from 'express';
-import RouterOSAPI from 'node-routeros';
+import RouterOSAPI from 'routeros';
 import { db } from '../config/database.js';
 import { authenticateToken } from '../middleware/auth.js';
 
