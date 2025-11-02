@@ -8,14 +8,15 @@
   NODE_VERSION = "20.19.0"
 
 # If you still need to proxy API:
-[[redirects]]
-  from = "/api/*"
-  to = "https://isp-billing-crm.onrender.com/api/:splat"
-  status = 200
-  force = true
-
-# SPA fallback:
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+{ 
+" rewrites": [
+   {
+"source": "/(.*)", 
+"destination": "/index.html" 
+   } 
+], 
+"buildCommand": "npm run build", 
+"outputDirectory": "dist", 
+"framework": "vite", 
+"installCommand": "npm install" 
+}
