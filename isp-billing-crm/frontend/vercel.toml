@@ -1,22 +1,13 @@
-# isp-billing-crm/frontend/netlify.toml
 [build]
-  base = "isp-billing-crm/frontend"
-  command = "npm run build"
-  publish = "isp-billing-crm/frontend/dist"
+command = "npm run build"
+outputDirectory = "dist"
+framework = "vite"
+installCommand = "npm install"
 
-[build.environment]
-  NODE_VERSION = "20.19.0"
+[build.env]
+NODE_VERSION = "20.19.0"
 
-# If you still need to proxy API:
-{ 
-" rewrites": [
-   {
-"source": "/(.*)", 
-"destination": "/index.html",
-   } 
-   ], 
-"buildCommand": "npm run build", 
-"outputDirectory": "dist", 
-"framework": "vite", 
-"installCommand": "npm install",
-}
+# For SPA routing - handle client-side routes
+[[rewrites]]
+source = "/(.*)"
+destination = "/index.html"
