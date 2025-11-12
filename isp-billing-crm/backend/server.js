@@ -21,17 +21,17 @@ app.use(express.json());
 await initializeNeonDB();
 
 // ===== ROOT ROUTE ==== 
-app. get(/,(req, res) => { 
+app.get('/', (req, res) => {
 res.json({ 
 status: 'OK', 
 message: 'ISP Billing API Server', 
 version: '1.0.0', 
 endpoints: { 
-health:'/api/health', 
+health: '/api/health', 
 auth: '/api/auth', 
-clients:'/api/clients', 
+clients: '/api/clients', 
 billing: '/api/billing', 
-invoices:/api/invoices', mikrotik:'/api/mikrotik' 
+invoices: '/api/invoices', mikrotik:'/api/mikrotik' 
 }
 }); 
 });
