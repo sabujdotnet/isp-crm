@@ -20,6 +20,22 @@ app.use(express.json());
 // Initialize Database
 await initializeNeonDB();
 
+// ===== ROOT ROUTE ==== 
+app. get(/,(req, res) => { 
+res.json({ 
+status: 'OK', 
+message: 'ISP Billing API Server', 
+version: '1.0.0', 
+endpoints: { 
+health:'/api/health', 
+auth: '/api/auth', 
+clients:'/api/clients', 
+billing: '/api/billing', 
+invoices:/api/invoices', mikrotik:'/api/mikrotik' 
+}
+}); 
+});
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/clients', clientRoutes);
@@ -37,6 +53,14 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Something went wrong!' });
 });
+
+// 404 handler
+app. use( (req, res) =>{ 
+res.status(404).json({ error: 'Not Found', 
+message: Cannot ${req.method} ${req. path}, 
+  availableEndpoints: ['/api/health','/api/auth', '/api/clients', '/api/billing', '/api/invoices', '/api/mikrotik']
+  });
+                               }); 
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
