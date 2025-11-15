@@ -13,7 +13,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'https://isp-billing-crm.onrender.com',
+        target: 'https://isp-billing-crm.onrender.com/api',
         changeOrigin: true,
         secure: false
       }
