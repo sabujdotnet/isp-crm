@@ -1,7 +1,7 @@
 // ===== frontend/src/config/api.js =====
 // Complete API configuration file
 
-export const API_BASE_API_URL = import.meta.env.VITE_API_URL || 
+export const API_BASE_URL = import.meta.env.VITE_BASE_API_URL || 
                             'https://isp-billing-crm.onrender.com/api';
 
 // API helper with error handling
