@@ -1,0 +1,25 @@
+services: 
+# Backend 
+- type: web 
+name: isp-billing-crm 
+env: node 
+buildCommand: npm install 
+startCommand: npm start 
+rootDir: isp-billing-crm/backend 
+envVars: 
+- key: NODE VERSION 
+value:"20.19.0" 
+- key: DATABASE URL 
+sync: false 
+key: JWT SECRET 
+generateValue: true 
+# Frontend 
+- type: web 
+name: isp-billing-frontend 
+env: static 
+buildCommand: npm install && npm run build staticPublishPath: dist 
+rootDir: isp-billing-crm/frontend envVars: 
+- key: NODE VERSION 
+value:"20.19.0" 
+- key: VITE API URL 
+value: https://isp-billing-crm. onrender.com/api
