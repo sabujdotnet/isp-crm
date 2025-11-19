@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 5000;
 const corsOptions = {
   origin: [
     'http://localhost:5173',                    // Local development
-    'https://1plus-wifi.vercel.app',             // Replace with your Netlify URL
+    'https://isp-crm-28h5.onrender.com',             // Replace with your Netlify URL
   ],
   credentials: true,
   optionsSuccessStatus: 200
