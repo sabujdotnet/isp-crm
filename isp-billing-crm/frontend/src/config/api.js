@@ -2,7 +2,7 @@
 // Complete API configuration file
 
 export const API_BASE_URL = import.meta.env.VITE_BASE_API_URL || 
-                            'https://isp-billing-crm.onrender.com/api';
+                            'http://localhost:5000/api';
 
 // API helper with error handling
 export const api = {
