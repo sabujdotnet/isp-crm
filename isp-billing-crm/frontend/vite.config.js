@@ -10,7 +10,10 @@ export default defineConfig({
     emptyOutDir: true
   },
   server: {
-    port: 5173,
+    historyApiFallback: true
+  }
+  server: {
+    port: 5000,
     proxy: {
       '/api': {
         target: 'https://isp-billing-crm.onrender.com/api',
