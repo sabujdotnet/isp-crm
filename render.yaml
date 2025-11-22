@@ -1,4 +1,5 @@
 services: 
+previewsEnabled: true
 # Backend 
 - type: web 
 name: isp-billing-crm 
@@ -6,6 +7,7 @@ env: node
 buildCommand: npm install 
 startCommand: npm start 
 rootDir: isp-billing-crm/backend 
+
 envVars: 
 - key: NODE VERSION 
 value:"20.19.0" 
@@ -15,11 +17,12 @@ key: JWT SECRET
 generateValue: true 
 # Frontend 
 - type: web 
-name: isp-billing-frontend 
+name: isp-crm-f 
 env: static 
 buildCommand: npm install && npm run build 
 staticPublishPath: dist 
 rootDir: isp-billing-crm/frontend 
+
 envVars: 
 - key: NODE VERSION 
     value: "20.19.0" 
